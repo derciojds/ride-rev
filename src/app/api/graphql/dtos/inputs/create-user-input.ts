@@ -11,13 +11,12 @@ export class AddressInput {
   @Field(type => String)
   state: string;
 
-  @Field(type => Number)
-  zip: number;
+  @Field(type => String)
+  zip: string;
 
   @Field(type => String)
   country: string;
 }
-
 
 @InputType()
 export class CreateUserInput {
@@ -31,6 +30,9 @@ export class CreateUserInput {
   email: string;
 
   @Field(type => String)
+  avatar: string;
+
+  @Field(type => String)
   password: string;
 
   @Field(type => AddressInput)
@@ -41,4 +43,7 @@ export class CreateUserInput {
 
   @Field(type => String)
   role: string;
+
+  @Field(type => [String], {nullable: true})
+  postIds?: string[];
 }

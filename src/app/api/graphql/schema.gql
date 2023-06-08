@@ -8,7 +8,7 @@ type Address {
   country: String!
   state: String!
   street: String!
-  zip: Float!
+  zip: String!
 }
 
 input AddressInput {
@@ -16,46 +16,83 @@ input AddressInput {
   country: String!
   state: String!
   street: String!
-  zip: Float!
+  zip: String!
 }
 
 type Comment {
+  author: CommentAuthor!
   content: String!
-  date: String!
-  id: String!
-  postId: String!
-  userId: String!
+  createdAt: DateTime!
+  id: ID!
+  postId: ID!
+}
+
+type CommentAuthor {
+  avatar: String!
+  email: String!
+  id: ID!
+  name: String!
+}
+
+input CommentInput {
+  authorId: String!
+  content: String!
+  id: ID!
+  postId: ID!
 }
 
 input CreateUserInput {
   address: AddressInput!
+  avatar: String!
   email: String!
   id: ID!
   name: String!
   password: String!
   phone: String!
+  postIds: [String!]
   role: String!
 }
 
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
 type Mutation {
-  createComment: Comment!
+  createComment(data: CommentInput!): Comment!
   createUser(data: CreateUserInput!): User!
+  deleteUser(id: String!): User!
+  updateUser(data: UpdateUserInput!, id: String!): User!
 }
 
 type Query {
   comments: [Comment!]!
-  postComments: [Comment!]!
+  postComments(postID: String!): [Comment!]!
   user(id: String!): User!
   users: [User!]!
 }
 
+input UpdateUserInput {
+  address: AddressInput
+  avatar: String
+  email: String
+  id: ID
+  name: String
+  password: String
+  phone: String
+  postIds: [String!]
+  role: String
+}
+
 type User {
-  address: Address!
+  address: Address
+  avatar: String!
   comments: [Comment!]
   email: String!
   id: ID!
   name: String!
   password: String!
   phone: String!
+  postIds: [String!]
   role: String!
 }
