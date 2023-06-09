@@ -1,8 +1,7 @@
 import { Field, ID, ObjectType } from "type-graphql";
-import { User } from "./user-model";
 
 @ObjectType()
-class CommentAuthor {
+export class Author {
   @Field(type => ID)
   id: string;
 
@@ -24,8 +23,8 @@ export class Comment {
   @Field(type => ID)
   postId: string;
 
-  @Field(type => CommentAuthor)
-  author: CommentAuthor;
+  @Field(type => Author)
+  author: Author;
 
   @Field(type => String)
   content: string;
