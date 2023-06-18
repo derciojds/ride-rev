@@ -1,0 +1,164 @@
+.hero,
+.heroContent {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero {
+  background: url('/images/hero.png') center;
+  height: 100vh;
+
+  h2,
+  p {
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    font-size: var(--step-3);
+    text-transform: uppercase;
+    color: var(--gray-100);
+  }
+
+  p {
+    font-size: var(--step-1);
+    color: var(--gray-100);
+  }
+}
+
+.heroContent {
+  bottom: 0;
+  justify-content: space-between;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    & > div {
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.cta {
+  font-size: var(--step-0);
+  padding: 1rem 24px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  align-self: self-start;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    width: var(--step-1);
+    height: var(--step-1);
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    background: var(--gray-700);
+    & > * {
+      filter: invert(1);
+    }
+  }
+  transition: 300ms ease-in-out;
+}
+
+.goDown {
+  display: flex;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px dashed var(--gray-100, #fff);
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  // overflow-x: scroll;
+  div {
+    flex: 1;
+  }
+}
+
+.seeAll {
+  display: flex;
+  flex-direction: row-reverse;
+
+  a {
+    padding: 1rem;
+    color: var(--txt-primary);
+    border: 1px solid var(--elevation-3);
+    border-radius: 0.75rem;
+    text-align: right;
+    transition: 300ms ease-in-out;
+    font-size: var(--step-0);
+
+    &:hover {
+      background: var(--elevation-3);
+    }
+  }
+}
+
+.whyChoose {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.sectionHeading {
+  max-width: 45ch;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blogPosts {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+
+.blogPost {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  max-width: 27rem;
+
+  a:first-child {
+    border-radius: 0.75rem;
+    overflow: hidden;
+
+    img {
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
+  }
+}
+
+.blogPostContent {
+  a {
+    display: block;
+  }
+}
+
+.blogPostDate {
+  color: var(--txt-tertiary);
+  font-size: var(--step--2);
+  margin-bottom: 1rem;
+}
+
+.blogPostTitle {
+  font-size: var(--step-1);
+}

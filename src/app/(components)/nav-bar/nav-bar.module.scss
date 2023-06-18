@@ -1,0 +1,36 @@
+.nav  {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: black;
+  width: 100%;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    li {
+      color: var(--gray-100);
+      font-size: var(--step-0);
+
+      &:hover {
+        color: var(--gray-300);
+      }
+
+      img {
+        &:hover {
+          filter: brightness(0.7);
+        } 
+      }
+    }
+  }
+}

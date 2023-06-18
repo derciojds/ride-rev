@@ -19,19 +19,19 @@ input AddressInput {
   zip: String!
 }
 
-type Comment {
-  author: CommentAuthor!
-  content: String!
-  createdAt: DateTime!
-  id: ID!
-  postId: ID!
-}
-
-type CommentAuthor {
+type Author {
   avatar: String!
   email: String!
   id: ID!
   name: String!
+}
+
+type Comment {
+  author: Author!
+  content: String!
+  createdAt: DateTime!
+  id: ID!
+  postId: ID!
 }
 
 input CommentInput {
@@ -66,8 +66,7 @@ type Mutation {
 }
 
 type Query {
-  comments: [Comment!]!
-  postComments(postID: String!): [Comment!]!
+  comments(postId: String!): [Comment!]!
   user(id: String!): User!
   users: [User!]!
 }

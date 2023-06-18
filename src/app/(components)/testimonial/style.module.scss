@@ -1,0 +1,19 @@
+.testimonial {
+  max-width: 27rem;
+}
+
+.testimonialAuthor {
+  display: flex;
+  margin-top: 2.5rem;
+  gap: 1.25rem;
+  align-items: center;
+
+  img {
+    background: var(--elevation-2);
+    border-radius: 0.75rem;
+  }
+}
+
+.testimonialText {
+  max-width: 40ch;
+}
