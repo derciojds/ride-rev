@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from './(components)/product';
 import { Title } from './(components)/section-title';
 import { WhyChoose } from './(components)/why-choose';
-import ChevronRightIcon from './assets/icons/chevron-right.svg';
 import styles from './styles/home.module.scss';
 import { Testimonial } from './(components)/testimonial';
+import { BlogPost } from './(components)/blog-post';
+import { IconArrowRight } from './assets/Icons';
 
 export default function Home() {
   return (
@@ -15,19 +15,17 @@ export default function Home() {
           <div>
             <div>
               <h2>
-                Upgrade Your Ride with High-Quality
-                <br />
-                Bike Parts and Customized Bikes.
+                Upgrade Your Ride with High-Quality Bike Parts and Customized
+                Bikes.
               </h2>
               <p>
                 Upgrade your ride with RideRev®. Shop for high-quality bike
-                parts and
-                <br /> design your own customized bike today.
+                parts and design your own customized bike today.
               </p>
             </div>
             <Link className={styles.cta} href="#">
               <span>Shop Now</span>
-              <Image src={ChevronRightIcon} alt="left" />
+              <IconArrowRight />
             </Link>
           </div>
           {/* <div className={styles.goDown}>
@@ -103,60 +101,10 @@ export default function Home() {
           thhings cycling
         </h3>
         <div className={`padding-x ${styles.blogPosts}`}>
-          <div className={styles.blogPost}>
-            <Link href="/blog">
-              <Image
-                width={432}
-                height={256}
-                src="/images/home/why-choose-1.png"
-                alt="blog post"
-              />
-            </Link>
-            <div className={styles.blogPostContent}>
-              <span className={styles.blogPostDate}>Apr 23</span>
-              <Link href="/blog">
-                <h4 className={styles.blogPostTitle}>
-                  How to choose the Right Bike for you
-                </h4>
-              </Link>
-            </div>
-          </div>
-          <div className={styles.blogPost}>
-            <Link href="/blog">
-              <Image
-                width={432}
-                height={256}
-                src="/images/home/why-choose-1.png"
-                alt="blog post"
-              />
-            </Link>
-            <div className={styles.blogPostContent}>
-              <span className={styles.blogPostDate}>Apr 23</span>
-              <Link href="/blog">
-                <h4 className={styles.blogPostTitle}>
-                  How to choose the Right Bike for you
-                </h4>
-              </Link>
-            </div>
-          </div>
-          <div className={styles.blogPost}>
-            <Link href="/blog">
-              <Image
-                width={432}
-                height={256}
-                src="/images/home/why-choose-1.png"
-                alt="blog post"
-              />
-            </Link>
-            <div className={styles.blogPostContent}>
-              <span className={styles.blogPostDate}>Apr 23</span>
-              <Link href="/blog">
-                <h4 className={styles.blogPostTitle}>
-                  How to choose the Right Bike for you
-                </h4>
-              </Link>
-            </div>
-          </div>
+          <BlogPost />
+          <BlogPost />
+          <BlogPost />
+          <BlogPost />
         </div>
         <div className={styles.seeAll}>
           <Link href="/blog">See All Blog Posts</Link>
