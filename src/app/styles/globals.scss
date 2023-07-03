@@ -124,7 +124,8 @@ a {
   text-decoration: none;
 }
 
-button:hover {
+button,
+label {
   cursor: pointer;
 }
 
@@ -136,4 +137,9 @@ button:hover {
 
 .padding-x {
   padding: 4rem 0;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: 3ms ease-in-out;
 }

@@ -6,8 +6,9 @@ const nextConfig = {
       topLevelAwait: true,
       layers: true,
     };
+
     return config;
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,0 +1,52 @@
+.filterTitle {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    color: var(--txt-primary, #000);
+    font-size: 1.5rem;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+.filterContent {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--txt-tertiary);
+    font-size: 1rem;
+
+    &[data-state='checked'] {
+      color: var(--txt-primary);
+    }
+
+    &:hover {
+      color: var(--txt-primary);
+    }
+  }
+}
+
+.checkboxIndicator {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+
+  svg {
+    stroke: var(--txt-primary);
+  }
+}

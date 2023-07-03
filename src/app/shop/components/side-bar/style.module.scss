@@ -1,0 +1,94 @@
+@import '../../../styles/include-media';
+
+.sideBar {
+  position: sticky;
+  top: 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 17.625rem;
+  min-width: 12.625rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  background: var(--elevation-2, #151515);
+
+  @include media('>1500px') {
+    flex: 1;
+  }
+
+  @include media('<=1304px') {
+    .openSideBarButton {
+      display: flex;
+    }
+
+    position: fixed;
+    padding-top: 5rem;
+    width: 17rem;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.openSideBarButton {
+  display: none;
+  height: 60px;
+  width: 40px;
+  border-radius: 0;
+  border: none;
+  background-color: var(--elevation-3);
+  right: -40px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  border-radius: 0 6px 6px 0;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 9px;
+    background: url(/images/icons/arrow.svg) no-repeat center center;
+    transform: rotate(-90deg);
+  }
+}
+
+.sideBarClosed {
+  left: -17rem;
+
+  .openSideBarButton {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.sideBarTitle {
+  display: flex;
+  color: var(--txt-primary);
+  font-size: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  .clearButton {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--txt-tertiary);
+  }
+}
+
+.applyFilterButton {
+  display: flex;
+  padding: 0.75rem 0rem;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+
+  border-radius: 0.75rem;
+  background: var(--elevation-3);
+  color: var(--txt-primary);
+  border: none;
+}
