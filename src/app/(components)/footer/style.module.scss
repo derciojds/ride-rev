@@ -24,6 +24,9 @@
   position: relative;
 
   svg {
+    stroke: var(--txt-primary);
+  }
+
   button {
     height: 100%;
     position: absolute;
