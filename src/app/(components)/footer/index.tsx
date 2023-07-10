@@ -1,7 +1,8 @@
 import styles from './style.module.scss';
 import Link from 'next/link';
 
-import { IconUser, Logo } from '@/app/assets/Icons';
+import { Logo } from '@/app/assets/Icons';
+import { MoveRight } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
             <Logo />
             <div className={styles.footerSubscribe}>
               <button type="button">
-                <IconUser />
+                <MoveRight />
               </button>
               <input type="email" placeholder="Enter your e-mail" />
             </div>

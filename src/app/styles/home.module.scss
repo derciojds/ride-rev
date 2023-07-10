@@ -34,12 +34,6 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
-    & > div {
-      h2 {
-        margin-bottom: 1rem;
-      }
-    }
   }
 }
 
@@ -54,6 +48,7 @@
 
   display: flex;
   align-items: center;
+  gap: 1rem;
 
   img {
     width: var(--step-1);
@@ -94,7 +89,7 @@
   flex-direction: row-reverse;
 
   a {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     color: var(--txt-primary);
     border: 1px solid var(--elevation-3);
     border-radius: 0.75rem;

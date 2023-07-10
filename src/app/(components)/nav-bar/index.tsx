@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './nav-bar.module.scss';
 import Logo from '../../assets/icons/logo.svg';
+import { Search, ShoppingCart, User } from 'lucide-react';
 
 export function NavBar() {
   return (
