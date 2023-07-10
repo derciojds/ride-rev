@@ -1,0 +1,122 @@
+@import '../../styles/include-media';
+
+.post {
+  --paddind-x: 130px;
+
+  margin-top: 8rem;
+  width: min(100% - var(--paddind-x), 1630px);
+
+  @include media('<700px') {
+    --paddind-x: 60px;
+  }
+}
+
+.postHeader {
+  --header-height: 1fr;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: var(--header-height);
+
+  .postTitle {
+    position: relative;
+    margin-right: var(--space-l);
+
+    h1 {
+      text-align: right;
+      font-size: var(--step-7);
+      text-transform: uppercase;
+    }
+
+    .postDetails {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      span {
+        text-transform: uppercase;
+        display: block;
+        font-size: var(--step--1);
+      }
+    }
+  }
+
+  .postImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include media('<=1366px') {
+    --header-height: 64vh;
+  }
+
+  @include media('<1000px') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 36vh;
+    grid-gap: var(--space-l);
+
+    .postTitle {
+      margin: 0;
+
+      h1 {
+        text-align: left;
+
+        @include media('<400px') {
+          font-size: 2.5rem;
+        }
+      }
+
+      .postDetails {
+        display: none;
+      }
+    }
+  }
+}
+
+.postContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 4rem 0;
+
+  .relatedPosts {
+    position: sticky;
+    top: 0;
+
+    width: 210px;
+    flex-wrap: wrap;
+
+    & > h4 {
+      text-transform: uppercase;
+      font-family: var(--font-fjallaOne);
+      margin-bottom: 1rem;
+    }
+
+    .posts {
+      --width: 210px;
+      grid-template-columns: repeat(auto-fill, var(--width));
+      display: grid;
+      gap: 2rem;
+
+      @include media('<512px') {
+        --width: 1fr;
+      }
+    }
+  }
+
+  main {
+    max-width: 50.625rem;
+    text-align: justify;
+
+    p {
+      margin-bottom: var(--step-0);
+    }
+  }
+
+  @include media('<1000px') {
+    flex-direction: column-reverse;
+
+    .relatedPosts {
+      width: auto;
+      flex-wrap: nowrap;
+    }
+  }
+}
