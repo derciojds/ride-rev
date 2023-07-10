@@ -1,0 +1,9 @@
+.posts {
+  margin: 8rem 0;
+  width: min(100% - 40px, 1360px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+}
