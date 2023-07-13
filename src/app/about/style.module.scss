@@ -1,0 +1,38 @@
+@import '../styles/include-media';
+
+.about {
+  padding: 8rem 0;
+
+  .sectionsWrapper {
+    margin-left: 190px;
+
+    section {
+      margin: 2rem 2rem 2rem auto;
+      gap: 2rem;
+      display: flex;
+
+      h3 {
+        font-family: var(--font-fjallaOne);
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-top: -4px;
+        max-width: 60ch;
+      }
+
+      @include media('<=890px') {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+
+    @include media('<=1366px') {
+      margin-left: 145px;
+    }
+
+    @include media('<=650px') {
+      margin-left: 0;
+    }
+  }
+}
