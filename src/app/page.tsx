@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Product } from './(components)/product';
-import { Title } from './(components)/section-title';
+import { Title } from './(components)/title';
 import { WhyChoose } from './(components)/why-choose';
 import styles from './styles/home.module.scss';
 import { Testimonial } from './(components)/testimonial';
